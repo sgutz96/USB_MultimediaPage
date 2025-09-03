@@ -1,0 +1,320 @@
+ /* ===========================
+        Sección del Banner
+        =========================== */
+        #banner-section {
+            /* Calcula el espacio restante en la pantalla (100vh - altura del nav) */
+            height: calc(100vh - 100px);
+            /* Ajusta "100px" por la altura real de tu nav */
+            position: relative;
+            overflow: hidden;
+        }
+
+        #carouselExampleIndicators,
+        .carousel-inner,
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-caption {
+            /* Fondo semitransparente para mejor legibilidad */
+            background: rgba(0, 0, 0, 0.4);
+            padding: var(--sp-4);
+            border-radius: var(--radius);
+            left: 10%;
+            right: 10%;
+            bottom: 10%;
+        }
+
+        .carousel-caption h5 {
+            color: var(--text-heading);
+            margin-bottom: var(--sp-2);
+        }
+
+        .carousel-caption p {
+            color: var(--text-body);
+            margin-bottom: 0;
+        }
+
+        /* Opcional: Estilo para los indicadores del carrusel */
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--text-heading);
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            border: 1px solid var(--primary);
+            opacity: 0.7;
+        }
+
+        .carousel-indicators .active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            opacity: 1;
+        }
+
+        /* Opcional: Estilo para los botones de control */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: drop-shadow(0 0 4px var(--bg));
+            /* Sombra para que se vean mejor */
+        }
+
+        /* ===========================
+        Sección "Acerca de"
+        =========================== */
+        .about-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: var(--sp-6);
+            overflow: hidden;
+        }
+
+        .about-content {
+            position: relative;
+            /* Asegura que el contenido esté sobre las partículas */
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(2rem, 6vw, 4rem);
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        @media (min-width: 1024px) {
+            .about-content {
+                flex-direction: row;
+                align-items: center;
+                gap: clamp(4rem, 8vw, 6rem);
+            }
+        }
+
+        .about-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text .lead{
+                text-align: start;
+        }
+
+        .about-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--sp-4);
+        }
+
+        @media (min-width: 640px) {
+            .about-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--sp-5);
+        }
+
+        .stat-card {
+            text-align: center;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            padding: var(--sp-5);
+            box-shadow: var(--shadow-1);
+        }
+
+        .stat-card h3 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: var(--sp-2);
+        }
+
+        .stat-card p {
+            margin: 0;
+        }
+
+        .about-image-container {
+            position: relative;
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            transform: rotate(-5deg);
+            /* Rota el contenedor 10 grados a la derecha */
+        }
+
+        @media (min-width: 1024px) {
+            .about-image-container {
+                width: 50%;
+            }
+        }
+
+        /* Estilos para el fondo de partículas */
+        #particles-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+
+        /* ===========================
+        Sección "INVESTIGACION Y SEMILLEROS"
+        =========================== */
+.sectionInvestigacion{
+     display: flex;
+            flex-wrap: wrap;
+          
+            justify-content: space-around;
+            align-items: flex-start;
+            background-color: var(--bgOP);
+            padding: 5%;
+            color: var(--text-on-secondary);
+}
+.sectionInvestigacion h2,p{
+    
+            color: var(--text-on-secondary);
+}
+
+        .semilleros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: space-around;
+            align-items: flex-start;
+            background-color: var(--bgOP);
+            padding: 5%;
+
+        }
+
+        .semilleroCard {
+            background: color-mix(in oklab, var(--tertiary) 30%, transparent);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-2);
+            box-shadow: var(--shadow-2);
+            padding: var(--sp-6);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: start;
+            max-width: 320px;
+            width: 100%;
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-between;
+        }
+
+        .semilleroCard:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+            border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+        }
+
+        .semilleroCard svg {
+            width: 64px;
+            height: 64px;
+            color: var(--primary);
+            margin-bottom: var(--sp-4);
+        }
+
+        .semilleroCard h3 {
+            margin: var(--sp-4) 0;
+            color: var(--text-on-secondary);
+        }
+
+        .semilleroCard p {
+            margin-bottom: var(--sp-5);
+            color: var(--text-on-secondary);
+        }
+
+        .semilleroCard>div {
+            display: flex;
+            justify-content: flex-start;
+            gap: var(--sp-3);
+            width: 100%;
+            margin-bottom: var(--sp-6);
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: space-around;
+            align-items: center;
+        }
+
+        .semilleroCard>div>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .semilleroCard>div h5 {
+            margin: 0;
+
+            color: var(--text-on-secondary);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: .06em;
+        }
+
+        .semilleroCard>div span {
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+
+            color: var(--text-on-secondary);
+        }
+
+        .semilleroCard a.btn {
+            width: 100%;
+        }
+
+        /* ===========================
+        Sección "INVESTIGACION Y SEMILLEROS"
+        =========================== */
+        .Eventos{
+            text-align: center;
+            padding: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: var(--sp-6);
+            overflow: hidden;
+            padding: 5%;
+            justify-content: space-around;
+        }
+        .Eventos .VideoEvento {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+           
+            padding: var(--sp-6);
+        }
+        .Eventos h2 {
+            margin-bottom: var(--sp-6);
+        }
+        .Eventos iframe {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius);
+            margin-bottom: var(--sp-5);
+            border: 1px solid var(--border);
+        }
+        .Eventos a.btn {
+            margin-top: var(--sp-5);
+        }

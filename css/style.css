@@ -1,0 +1,397 @@
+/* ===========================
+        Paleta y tokens de diseño
+        =========================== */
+        :root{
+        /* Colores base */
+        --bg: #1B4345;
+        
+        --bgOP: #032022;
+        --primary: #28A8B4;
+        --secondary: #F09A32;
+        --tertiary: #135A70;
+
+        /* Colores de texto */
+        --text-body: #E1E1E1;
+        --text-heading: #FFFFFF;
+        --text-on-primary: #062326;
+        --text-on-secondary: #ffffff;
+
+        /* Neutros y utilitarios */
+        --border: rgba(255,255,255,0.14);
+        --muted: rgba(225,225,225,0.72);
+
+        /* Efectos */
+        --shadow-1: 0 6px 16px rgba(0,0,0,0.25);
+        --shadow-2: 0 10px 28px rgba(0,0,0,0.35);
+        --ring: 0 0 0 3px rgba(40,168,180,0.35);
+
+        /* Tipografía y espaciamiento */
+        --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        --lh-tight: 1.15;
+        --lh-normal: 1.6;
+        --radius: 16px;
+        --radius-sm: 10px;
+        --radius-lg: 24px;
+        --sp-1: 4px;
+        --sp-2: 8px;
+        --sp-3: 12px;
+        --sp-4: 16px;
+        --sp-5: 24px;
+        --sp-6: 32px;
+        }
+
+        /* ===========================
+        Reset suave + base
+        =========================== */
+        *,
+        *::before,
+        *::after { box-sizing: border-box; }
+
+        html, body {
+        height: 100%;
+        }
+
+        body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text-body);
+        font-family: var(--font-sans);
+        line-height: var(--lh-normal);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+
+        img, svg, video { display: block; max-width: 100%; height: auto; }
+
+        /* Links */
+        a {
+        color: var(--primary);
+        text-decoration: none;
+        border-bottom: 1px dashed color-mix(in oklab, var(--primary) 70%, transparent);
+        transition: border-color .2s ease, color .2s ease, opacity .2s ease;
+        }
+        a:hover { color: color-mix(in oklab, var(--primary) 85%, white); border-bottom-color: currentColor; }
+        a:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 6px; }
+
+        /* ===========================
+        Tipografía
+        =========================== */
+        h1, h2, h3, h4, h5, h6 {
+        margin: 0 0 var(--sp-4);
+        color: var(--text-heading);
+        letter-spacing: .2px;
+        line-height: var(--lh-tight);
+        }
+
+        h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; }
+        h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; text-align: center; }
+        h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 700; }
+        h4 { font-size: 1.15rem; font-weight: 600; color: var(--text-body); }
+        h5 { font-size: 1rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+        h6 { font-size: .95rem; font-weight: 600; color: var(--muted); letter-spacing: .05em; }
+
+        p {
+        margin: 0 0 var(--sp-5);
+        color: var(--text-body);
+        font-size: 1rem;
+        }
+
+        span,
+        spam {
+        color: inherit;
+        font: inherit;
+        }
+
+        /* Texto utilitario */
+        .muted { color: var(--muted); }
+        .lead  { font-size: 1.125rem; color: var(--text-heading); }
+
+        /* Superficies/Secciones */
+        .section {
+        padding: clamp(20px, 4vw, 56px)  clamp(16px, 4vw, 40px);
+        }
+
+        .surface {
+        background: color-mix(in oklab, var(--tertiary) 25%, transparent);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-1);
+        padding: var(--sp-6);
+        }
+
+        /* ===========================
+        Botones
+        =========================== */
+        .btn {
+        --btn-bg: var(--primary);
+        --btn-fg: var(--text-on-primary);
+        --btn-bg-hover: color-mix(in oklab, var(--btn-bg) 88%, white);
+        --btn-bg-active: color-mix(in oklab, var(--btn-bg) 80%, black);
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        padding: 12px 18px;
+        border-radius: var(--radius);
+        border: 1px solid color-mix(in oklab, var(--btn-bg) 50%, transparent);
+        background: linear-gradient(180deg, color-mix(in oklab, var(--btn-bg) 90%, white) 0%, var(--btn-bg) 100%);
+        color: var(--btn-fg);
+        font-weight: 700;
+        letter-spacing: .2px;
+
+        cursor: pointer;
+        transition: transform .15s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
+        box-shadow: var(--shadow-1);
+        text-decoration: none;
+        }
+        .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-2); background: var(--btn-bg-hover); }
+        .btn:active { transform: translateY(0); background: var(--btn-bg-active); }
+        .btn:focus-visible { outline: none; box-shadow: var(--ring), var(--shadow-2); border-radius: 6px; }
+
+        /* Botón primario (turquesa) */
+        .btn--primary {
+        --btn-bg: var(--primary);
+        --btn-fg: var(--text-on-primary);
+        }
+
+        /* Botón secundario (naranja) */
+        .btn--secondary {
+        --btn-bg: var(--secondary);
+        --btn-fg: var(--text-on-secondary);
+        }
+
+        /* Botón fantasma (bordeado) — opcional extra */
+        .btn--ghost {
+        background: transparent;
+        border-color: var(--border);
+        color: var(--text-body);
+        }
+        .btn--ghost:hover {
+        background: color-mix(in oklab, var(--tertiary) 22%, transparent);
+        }
+
+        /* Tamaños opcionales */
+        .btn--sm { padding: 8px 12px; border-radius: var(--radius-sm); font-size: .95rem; }
+        .btn--lg { padding: 14px 22px; border-radius: var(--radius-lg); font-size: 1.05rem; }
+
+        /* Deshabilitado */
+        .btn[disabled],
+        .btn:disabled {
+        opacity: .55;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+        }
+
+        /* ===========================
+        Bases para imágenes
+        =========================== */
+
+        /* 1) Marco sutil con sombra suave (ideal para imágenes sueltas) */
+        .img-frame {
+        display: block;
+        border-radius: var(--radius);
+        overflow: clip;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-1);
+        background: color-mix(in oklab, var(--bg) 85%, black);
+        }
+        .img-frame img { width: 100%; height: auto; display: block; }
+
+        /* 2) Tarjeta elevada para imagen + contenido (capciones/descripciones) */
+        .img-card {
+        border-radius: var(--radius-lg);
+        overflow: clip;
+        background: color-mix(in oklab, var(--tertiary) 30%, transparent);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-2);
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+        .img-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 36px rgba(0,0,0,0.45);
+        border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+        }
+        .img-card__media { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+        .img-card__body  { padding: var(--sp-5); color: var(--text-body); }
+        .img-card__title { margin: 0 0 var(--sp-2); color: var(--text-heading); font-weight: 700; font-size: 1.05rem; }
+        .img-card__meta  { margin: 0; color: var(--muted); font-size: .95rem; }
+
+        /* ===========================
+        Pequeños helpers
+        =========================== */
+        .centered { display: grid; place-items: center; }
+        .max-w-contents { max-width: 72rem; margin-inline: auto; padding-inline: clamp(12px, 3vw, 28px); }
+        .hr {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border), transparent);
+        border: 0; margin: var(--sp-6) 0;
+        }
+
+        /* Tarjetas generales (por si quieres bloques de contenido) */
+        .card {
+        background: color-mix(in oklab, var(--tertiary) 20%, transparent);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-1);
+        padding: var(--sp-6);
+        }
+
+        /* Inputs base (coherentes con la paleta) */
+        input, select, textarea {
+        background: color-mix(in oklab, var(--bg) 88%, black);
+        color: var(--text-body);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px 14px;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+        transition: box-shadow .2s ease, border-color .2s ease;
+        }
+        input::placeholder, textarea::placeholder { color: color-mix(in oklab, var(--text-body) 65%, transparent); }
+        input:focus-visible, select:focus-visible, textarea:focus-visible {
+        outline: none;
+        border-color: color-mix(in oklab, var(--primary) 50%, var(--border));
+        box-shadow: var(--ring);
+        }
+
+        /* ===========================
+        Navegación (nav)
+        =========================== */
+        nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--sp-4) clamp(16px, 4vw, 40px);
+        background: color-mix(in oklab, var(--bg) 92%, black);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-1);
+        }
+
+        nav img {
+        height: clamp(3rem, 5vw, 4rem);
+        width: auto;
+        transition: transform .2s ease;
+        }
+
+        nav img:hover {
+        transform: scale(1.05);
+        }
+
+        .navbar {
+        display: flex;
+        align-items: center;
+        gap: var(--sp-5);
+        }
+
+        .navbar a {
+        padding: var(--sp-2) var(--sp-3);
+        color: var(--text-body);
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: color .2s ease, border-color .2s ease;
+        }
+
+        .navbar a:hover {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+        }
+
+        .navbar a:focus-visible {
+        outline: none;
+        box-shadow: none;
+        border-radius: var(--radius-sm);
+        background: color-mix(in oklab, var(--tertiary) 10%, transparent);
+        }
+
+        /* ===========================
+        Dropdown (menú desplegable)
+        =========================== */
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+        .dropbtn {
+        background: none;
+        border: none;
+        color: var(--text-body);
+        padding: var(--sp-2) var(--sp-3);
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: var(--sp-2);
+        transition: color .2s ease;
+        }
+
+        .dropbtn:hover {
+        color: var(--primary);
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: color-mix(in oklab, var(--tertiary) 20%, black);
+        border: 1px solid var(--border);
+        min-width: 160px;
+        box-shadow: var(--shadow-2);
+        z-index: 1;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        margin-top: var(--sp-2);
+        }
+
+        .dropdown-content a {
+        color: var(--text-body);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+        background-color: color-mix(in oklab, var(--tertiary) 30%, black);
+        color: var(--primary);
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
+        /* ===========================
+        Botón de contacto
+        =========================== */
+        nav button {
+        /* Aplica los estilos del botón secundario */
+        --btn-bg: var(--secondary);
+        --btn-fg: var(--text-on-secondary);
+        --btn-bg-hover: color-mix(in oklab, var(--btn-bg) 88%, white);
+        --btn-bg-active: color-mix(in oklab, var(--btn-bg) 80%, black);
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: var(--radius);
+        border: 1px solid color-mix(in oklab, var(--btn-bg) 50%, transparent);
+        background: linear-gradient(180deg, color-mix(in oklab, var(--btn-bg) 90%, white) 0%, var(--btn-bg) 100%);
+        color: var(--btn-fg);
+        font-weight: 700;
+        letter-spacing: .2px;
+        cursor: pointer;
+        transition: transform .15s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
+        box-shadow: var(--shadow-1);
+        }
+
+        nav button:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-2);
+        background: var(--btn-bg-hover);
+        }
+        nav button:active { transform: translateY(0); background: var(--btn-bg-active); }
+        nav button:focus-visible { outline: none; box-shadow: var(--ring), var(--shadow-2); }
