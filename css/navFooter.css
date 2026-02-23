@@ -1,216 +1,359 @@
 /* ===========================
-        Navegación (nav)
-        =========================== */
-        nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: var(--sp-4) clamp(16px, 4vw, 40px);
-        background: color-mix(in oklab, var(--bg) 92%, black);
-        border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-1);
-        }
+   NAV — TERMINAL STYLE
+   =========================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(24px, 5vw, 64px);
+  height: 68px;
+  background: rgba(8,12,16,0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-        nav img {
-        height: clamp(3rem, 5vw, 4rem);
-        width: auto;
-        transition: transform .2s ease;
-        }
+/* Top accent bar */
+nav::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--secondary) 20%,
+    var(--primary) 50%,
+    var(--secondary) 80%,
+    transparent 100%
+  );
+  opacity: 0.7;
+}
 
-        nav img:hover {
-        transform: scale(1.05);
-        }
+/* Decorative corner bracket top-right */
+nav::after {
+  content: '';
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 10px; height: 10px;
+  border-top: 1px solid var(--secondary);
+  border-right: 1px solid var(--secondary);
+  opacity: 0.4;
+}
 
-        .navbar {
-        display: flex;
-        align-items: center;
-        gap: var(--sp-5);
-        }
+nav img {
+  height: clamp(2rem, 3.5vw, 2.8rem);
+  width: auto;
+  filter: drop-shadow(0 0 6px var(--glow-teal));
+  transition: filter .2s;
+}
+nav img:hover { filter: drop-shadow(0 0 12px var(--glow-orange)); }
 
-        .navbar a {
-        padding: var(--sp-2) var(--sp-3);
-        color: var(--text-body);
-        font-weight: 500;
-        text-decoration: none;
-        border-bottom: 2px solid transparent;
-        transition: color .2s ease, border-color .2s ease;
-        }
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
 
-        .navbar a:hover {
-        color: var(--primary);
-        border-bottom-color: var(--primary);
-        }
+.navbar a {
+  padding: 8px 14px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-bottom: none;
+  position: relative;
+  transition: color .2s ease;
+}
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 14px; right: 14px;
+  height: 1px;
+  background: var(--secondary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+.navbar a:hover { color: var(--secondary); }
+.navbar a:hover::after { transform: scaleX(1); }
 
-        .navbar a:focus-visible {
-        outline: none;
-        box-shadow: none;
-        border-radius: var(--radius-sm);
-        background: color-mix(in oklab, var(--tertiary) 10%, transparent);
-        }
+/* ===========================
+   DROPDOWN
+   =========================== */
+.dropdown { position: relative; display: inline-block; }
 
-        /* ===========================
-        Dropdown (menú desplegable)
-        =========================== */
-        .dropdown {
-        position: relative;
-        display: inline-block;
-        }
+.dropbtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  font-size: .8rem;
+  font-weight: 400;
+  font-family: var(--font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color .2s ease;
+}
+.dropbtn:hover { color: var(--secondary); }
 
-        .dropbtn {
-        background: none;
-        border: none;
-        color: var(--text-body);
-        padding: var(--sp-2) var(--sp-3);
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: var(--sp-2);
-        transition: color .2s ease;
-        }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  min-width: 180px;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
 
-        .dropbtn:hover {
-        color: var(--primary);
-        }
+/* Top accent on dropdown */
+.dropdown-content::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+}
 
-        .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: color-mix(in oklab, var(--tertiary) 20%, black);
-        border: 1px solid var(--border);
-        min-width: 160px;
-        box-shadow: var(--shadow-2);
-        z-index: 1;
-        border-radius: var(--radius-sm);
-        overflow: hidden;
-        margin-top: var(--sp-2);
-        }
+.dropdown-content a {
+  display: block;
+  color: var(--text-muted);
+  padding: 10px 16px;
+  font-size: .8rem;
+  font-family: var(--font-mono);
+  letter-spacing: .06em;
+  border: none;
+  border-bottom: none;
+  transition: color .15s ease, background .15s ease;
+}
+.dropdown-content a:hover {
+  color: var(--secondary);
+  background: rgba(4,191,191,0.06);
+}
+.dropdown-content a::before {
+  content: '> ';
+  color: var(--primary);
+  opacity: 0;
+  transition: opacity .15s;
+}
+.dropdown-content a:hover::before { opacity: 1; }
 
-        .dropdown-content a {
-        color: var(--text-body);
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        border-bottom: none;
-        }
+.dropdown:hover .dropdown-content { display: block; }
 
-        .dropdown-content a:hover {
-        background-color: color-mix(in oklab, var(--tertiary) 30%, black);
-        color: var(--primary);
-        }
-
-        .dropdown:hover .dropdown-content {
-        display: block;
-        }
-
-        /* ===========================
-        Botón de contacto
-        =========================== */
-        nav button {
-        /* Aplica los estilos del botón secundario */
-        --btn-bg: var(--secondary);
-        --btn-fg: var(--text-on-secondary);
-        --btn-bg-hover: color-mix(in oklab, var(--btn-bg) 88%, white);
-        --btn-bg-active: color-mix(in oklab, var(--btn-bg) 80%, black);
-
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 12px 18px;
-        border-radius: var(--radius);
-        border: 1px solid color-mix(in oklab, var(--btn-bg) 50%, transparent);
-        background: linear-gradient(180deg, color-mix(in oklab, var(--btn-bg) 90%, white) 0%, var(--btn-bg) 100%);
-        color: var(--btn-fg);
-        font-weight: 700;
-        letter-spacing: .2px;
-        cursor: pointer;
-        transition: transform .15s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
-        box-shadow: var(--shadow-1);
-        }
-
-        nav button:hover {
-        transform: translateY(-1px);
-        box-shadow: var(--shadow-2);
-        background: var(--btn-bg-hover);
-        }
-        nav button:active { transform: translateY(0); background: var(--btn-bg-active); }
-        nav button:focus-visible { outline: none; box-shadow: var(--ring), var(--shadow-2); }
+/* ===========================
+   NAV BUTTON — CONTACT
+   =========================== */
+nav > button {
+  padding: 9px 20px;
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(242,145,27,0.5), 0 0 12px var(--glow-orange);
+  transition: all .2s ease;
+}
+nav > button:hover {
+  background: var(--primary);
+  color: #080C10;
+  box-shadow: 0 0 28px var(--glow-orange);
+}
 
 
-        .site-footer {
-  background: color-mix(in oklab, var(--bg) 92%, black);
+
+
+
+
+/* Reemplaza el .dropdown:hover .dropdown-content por: */
+.dropdown.open .dropdown-content { display: block; }
+nav {
+  position: fixed; /* alternativa si sticky sigue sin funcionar */
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+/* ===========================
+   FOOTER — TERMINAL STYLE
+   =========================== */
+.site-footer {
+  background: var(--bg2);
   border-top: 1px solid var(--border);
-  color: var(--text-body);
-  padding-top: var(--sp-6);
-  padding-bottom: var(--sp-6);
+  color: var(--text-muted);
+  padding: 64px clamp(24px, 5vw, 64px) 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gradient line */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--secondary) 30%,
+    var(--primary) 70%,
+    transparent 100%
+  );
+}
+
+/* Ambient glow corner */
+.site-footer::after {
+  content: '';
+  position: absolute;
+  bottom: -120px; right: -120px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(4,191,191,0.06), transparent 65%);
+  pointer-events: none;
 }
 
 .footer-content {
   display: grid;
-  gap: var(--sp-6);
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-7);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-items: start;
+  max-width: 1240px;
+  margin-inline: auto;
 }
 
+/* Footer logo */
 .footer-logo {
-  max-width: 160px;
+  max-width: 130px;
   margin-bottom: var(--sp-4);
+  filter: drop-shadow(0 0 6px var(--glow-teal));
 }
 
 .footer-col h4 {
-  color: var(--text-heading);
-  font-size: 1.1rem;
-  margin-bottom: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--secondary);
+  margin-bottom: var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-col h4::before {
+  content: '//';
+  color: var(--primary);
+  font-size: .65rem;
 }
 
 .footer-links,
 .footer-contact {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0; margin: 0;
   display: grid;
-  gap: var(--sp-2);
+  gap: 10px;
 }
 
 .footer-links a {
-  color: var(--text-body);
-  text-decoration: none;
-  border-bottom: 1px dashed color-mix(in oklab, var(--primary) 60%, transparent);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  border: none;
+  transition: color .2s ease, padding-left .15s ease;
+  display: block;
 }
-
 .footer-links a:hover {
-  color: color-mix(in oklab, var(--primary) 85%, white);
-  border-bottom-color: currentColor;
+  color: var(--secondary);
+  padding-left: 8px;
 }
+.footer-links a::before {
+  content: '→ ';
+  color: var(--primary);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.footer-links a:hover::before { opacity: 1; }
 
 .footer-contact li {
-  font-size: 0.95rem;
-  display: flex;
-  gap: var(--sp-2);
-  align-items: center;
-}
-
-.footer-social {
+  font-size: .82rem;
+  font-family: var(--font-mono);
   display: flex;
   gap: var(--sp-3);
-  font-size: 1.5rem;
+  align-items: flex-start;
+  color: var(--text-muted);
 }
 
+/* Social icons — square, no radius */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 .footer-social a {
-  color: var(--text-body);
-  transition: color 0.2s ease;
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: none;
+  transition: all .2s ease;
 }
-
 .footer-social a:hover {
-  color: var(--primary);
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: rgba(4,191,191,0.08);
+  box-shadow: 0 0 14px var(--glow-teal);
 }
 
+/* Footer bottom bar */
 .footer-bottom {
   text-align: center;
-  padding-top: var(--sp-4);
-  font-size: 0.95rem;
+  padding-top: var(--sp-5);
+  max-width: 1240px;
+  margin-inline: auto;
+}
+.footer-bottom p {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.footer-bottom p::before {
+  content: '// ';
+  color: var(--support);
+}
+
+
+.footer-contact i {
+  color: var(--primary);
+  margin-top: 2px;
+  font-size: .85rem;
+}
+
+.footer-social i {
+  pointer-events: none;
 }

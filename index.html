@@ -1,329 +1,378 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Fuentes: Syne + Space Mono + JetBrains Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
 
-  
-
-    <!-- Usa la fuente Inter, como se define en tu CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <!-- Enlace a la librería Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <link rel="stylesheet" href="./css/style.css">
-  
   <link rel="stylesheet" href="./css/navFooter.css">
-    <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/home.css">
 
-
-
-    <title>Ingenieria Multimedia</title>
+  <title>Ingeniería Multimedia — USBBOG</title>
 </head>
 
 <body>
 
+  <!-- ========================
+       NAV
+       ======================== -->
+  <nav>
+    <img src="./assets/img/Logo.png" alt="Ingeniería Multimedia USBBOG">
 
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#home">Miembros</a>
+      <div class="dropdown">
+        
 
-
-    <nav>
-        <img src="./assets/img/Logo.png" alt="" srcset="">
-        <div class="navbar">
-            <a href="#home">Home</a>
-            <a href="#home">Mienbros</a>
-            <div class="dropdown">
-                <button class="dropbtn">Investigacion
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-            <a href="#news">Eventos</a>
-            <div class="dropdown">
-                <button class="dropbtn">Servicios
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
+        <a class="dropbtn" onclick="this.parentElement.classList.toggle('open')">Investigación</a>
+        <div class="dropdown-content">
+          <a href="#">Semilleros</a>
+          <a href="#">Publicaciones</a>
+          <a href="#">Grupos</a>
         </div>
-        <button>Contactenos</button>
-    </nav>
-
-    <section id="banner-section">
-        <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner h-100">
-                <div class="carousel-item active h-100">
-                    <img src="./assets/img/Banner/Banner_ (1).jpg" class="d-block w-100 h-100 object-fit-cover"
-                        alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Primer Título del Banner</h5>
-                        <p>Algún texto descriptivo para el primer slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="./assets/img/Banner/Banner_ (2).jpg" class="d-block w-100 h-100 object-fit-cover"
-                        alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Segundo Título del Banner</h5>
-                        <p>Un texto un poco más largo para este slide del carrusel.</p>
-                    </div>
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="./assets/img/Banner/Banner_ (3).jpg" class="d-block w-100 h-100 object-fit-cover"
-                        alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Tercer Título del Banner</h5>
-                        <p>Detalles sobre este tercer y último slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+      </div>
+      <a href="#news">Eventos</a>
+      <div class="dropdown">
+        <button class="dropbtn">Servicios</button>
+        <div class="dropdown-content">
+          <a href="#">Laboratorios</a>
+          <a href="#">Equipos</a>
+          <a href="#">Convenios</a>
         </div>
-    </section>
-
-    <section class="about-section">
-        <!-- Div para el fondo de partículas -->
-        <div id="particles-about" class="particles-bg"></div>
-        <div class="about-content">
-            <div class="about-info">
-                <div class="about-text">
-                    <h2 class="lead">Innovación en Multimedia</h2>
-                    <h1>Ingeniería<br>Multimedia</h1>
-                    <p>Formamos profesionales capaces de crear, desarrollar e innovar en el mundo de los medios
-                        digitales, la realidad virtual y las tecnologías emergentes.</p>
-                    <div class="about-buttons ">
-                        <a href="#" class="btn btn--primary">
-                            Conoce más
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="icon">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                        <a href="#" class="btn btn--ghost">Contáctenos</a>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <h3>15+</h3>
-                        <p>Años de experiencia</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>800+</h3>
-                        <p>Graduados</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>98%</h3>
-                        <p>Empleabilidad</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-image-container" id="aboutThree">
-                <!-- Imagen decorativa, se puede quitar si quieres que Three.js ocupe todo -->
-                <div class="img-frame">
-                    <img src="./assets/img/Img_1.png" class="about-image"
-                        alt="Estudiante trabajando con dispositivos de realidad virtual">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sectionInvestigacion">
-        <h2>Semilleros e Investigacion</h2>
-        <p>Nuestros grupos de investigación y semilleros son espacios donde estudiantes y docentes colaboran en
-            proyectos innovadores que impactan la industria multimedia y tecnológica.</p>
-        <div class="semilleros">
-            <!-- Primera tarjeta -->
-            <div class="semilleroCard">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12.95 2.1l-1.99 4.02-4.46.65a.5.5 0 00-.28.85l3.23 3.16-.76 4.45a.5.5 0 00.73.53L12 16.4l3.99 2.1a.5.5 0 00.73-.53l-.76-4.45 3.23-3.16a.5.5 0 00-.28-.85l-4.46-.65L11.05 2.1a.5.5 0 00-.98 0z"
-                        fill="currentColor"></path>
-                    <path
-                        d="M11.95 2.1a.5.5 0 00-.98 0L2.1 21.9a.5.5 0 00.72.53l9.14-4.83 9.14 4.83a.5.5 0 00.72-.53L12.95 2.1zM12 16.4l-3.99 2.1 4.24-4.14a.5.5 0 00.15-.36l.16-1.57 3.55 3.55-3.55 3.55z"
-                        fill="currentColor"></path>
-                </svg>
-                <h3>Titulo de semillero</h3>
-                <p>el semillero realiza creacion de videojuego y experiencias inmersivas </p>
-                <div>
-                    <div>
-                        <h5>5</h5>
-                        <span>miembros</span>
-                    </div>
-                    <div>
-                        <h5>12</h5>
-                        <span>proyectos</span>
-                    </div>
-                </div>
-                <button class="btn btn--primary">Conoce mas</button>
-            </div>
-            <!-- Segunda tarjeta -->
-            <div class="semilleroCard">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12.95 2.1l-1.99 4.02-4.46.65a.5.5 0 00-.28.85l3.23 3.16-.76 4.45a.5.5 0 00.73.53L12 16.4l3.99 2.1a.5.5 0 00.73-.53l-.76-4.45 3.23-3.16a.5.5 0 00-.28-.85l-4.46-.65L11.05 2.1a.5.5 0 00-.98 0z"
-                        fill="currentColor"></path>
-                    <path
-                        d="M11.95 2.1a.5.5 0 00-.98 0L2.1 21.9a.5.5 0 00.72.53l9.14-4.83 9.14 4.83a.5.5 0 00.72-.53L12.95 2.1zM12 16.4l-3.99 2.1 4.24-4.14a.5.5 0 00.15-.36l.16-1.57 3.55 3.55-3.55 3.55z"
-                        fill="currentColor"></path>
-                </svg>
-                <h3>Titulo de semillero</h3>
-                <p>el semillero realiza creacion de videojuego y experiencias inmersivas </p>
-                <div>
-                    <div>
-                        <h5>5</h5>
-                        <span>miembros</span>
-                    </div>
-                    <div>
-                        <h5>12</h5>
-                        <span>proyectos</span>
-                    </div>
-                </div>
-                <button class="btn btn--primary">Conoce mas</button>
-            </div>
-            <!-- Tercera tarjeta -->
-            <div class="semilleroCard">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12.95 2.1l-1.99 4.02-4.46.65a.5.5 0 00-.28.85l3.23 3.16-.76 4.45a.5.5 0 00.73.53L12 16.4l3.99 2.1a.5.5 0 00.73-.53l-.76-4.45 3.23-3.16a.5.5 0 00-.28-.85l-4.46-.65L11.05 2.1a.5.5 0 00-.98 0z"
-                        fill="currentColor"></path>
-                    <path
-                        d="M11.95 2.1a.5.5 0 00-.98 0L2.1 21.9a.5.5 0 00.72.53l9.14-4.83 9.14 4.83a.5.5 0 00.72-.53L12.95 2.1zM12 16.4l-3.99 2.1 4.24-4.14a.5.5 0 00.15-.36l.16-1.57 3.55 3.55-3.55 3.55z"
-                        fill="currentColor"></path>
-                </svg>
-                <h3>Titulo de semillero</h3>
-                <p>el semillero realiza creacion de videojuego y experiencias inmersivas </p>
-                <div>
-                    <div>
-                        <h5>5</h5>
-                        <span>miembros</span>
-                    </div>
-                    <div>
-                        <h5>12</h5>
-                        <span>proyectos</span>
-                    </div>
-                </div>
-                <button class="btn btn--primary">Conoce mas</button>
-            </div>
-        </div>
-    </section>
-    
-    <section class="Eventos">
-        <div id="particles-events" class="particles-bg"></div>
-        <h2>próximos eventos</h2>
-        <div class="VideoEvento">
-            <iframe src="https://www.youtube.com/embed/0gQwwXwgSUs" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <h3>Segunda Creación Colectiva - Ingenieria Multimedia USBBOG</h3>
-            <p>Ya puedes ver la segunda creación colectiva del USB Medialab, en el cual podras ir encontrando diferente
-                contenido multimedia creado por y para los estudiantes. En esta ocasión los estudiantes de Ingenieria
-                Multimedia estuvieron trabajando en una animación la cual muestra a los personajes más reconocidos de
-                Cartoon Network bailando y cantando la canción Trift Shop.</p>
-            <a href="#" class="btn btn--primary">Eventos y actividades pasadas</a>
-        </div>
-    </section>
-
-
-<footer class="site-footer section">
-  <div class="max-w-contents footer-content">
-    <!-- Bloque 1: Información general -->
-    <div class="footer-col">
-      <img src="./assets/img/Logo.png" alt="Logo Ingeniería Multimedia" class="footer-logo">
-      <p class="muted">Ingeniería Multimedia USBBOG. Formación, tecnología y creatividad para transformar el mundo digital.</p>
-    </div>
-
-    <!-- Bloque 2: Enlaces -->
-    <div class="footer-col">
-      <h4>Enlaces</h4>
-      <ul class="footer-links">
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#home">Miembros</a></li>
-        <li><a href="#news">Eventos</a></li>
-        <li><a href="#">Servicios</a></li>
-      </ul>
-    </div>
-
-    <!-- Bloque 3: Contacto -->
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul class="footer-contact">
-        <li><span>📍</span> Bogotá, Colombia</li>
-        <li><span>✉️</span> ingenieria@usb.edu.co</li>
-        <li><span>📞</span> +57 1 234 5678</li>
-      </ul>
-    </div>
-
-    <!-- Bloque 4: Redes sociales -->
-    <div class="footer-col">
-      <h4>Síguenos</h4>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook">🌐</a>
-        <a href="#" aria-label="Instagram">📸</a>
-        <a href="#" aria-label="YouTube">🎥</a>
-        <a href="#" aria-label="X/Twitter">🐦</a>
       </div>
     </div>
-  </div>
 
-  <hr class="hr">
+    <button>Contáctenos</button>
+  </nav>
 
-  <!-- Créditos -->
-  <div class="max-w-contents footer-bottom">
-    <p class="muted">© 2025 Ingeniería Multimedia USBBOG. Todos los derechos reservados.</p>
-  </div>
-</footer>
+  <!-- ========================
+       BANNER
+       ======================== -->
+  <section id="banner-section">
+    <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+          class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
 
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <img src="./assets/img/Banner/Banner_ (1).jpg" class="d-block w-100 h-100" alt="Banner 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>// Innovación Digital</h5>
+            <p>Formamos profesionales del futuro multimedia con tecnologías emergentes y visión creativa.</p>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <img src="./assets/img/Banner/Banner_ (2).jpg" class="d-block w-100 h-100" alt="Banner 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>// Realidad Extendida</h5>
+            <p>Exploramos los límites de la realidad virtual, aumentada y mixed reality como herramientas de impacto.</p>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <img src="./assets/img/Banner/Banner_ (3).jpg" class="d-block w-100 h-100" alt="Banner 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>// Diseño Interactivo</h5>
+            <p>Donde el código se convierte en experiencia y la creatividad en tecnología transformadora.</p>
+          </div>
+        </div>
+      </div>
 
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
 
- 
+  <!-- ========================
+       ABOUT SECTION
+       ======================== -->
+  <section class="about-section" id="home">
+    <div id="particles-about" class="particles-bg"></div>
 
-    <script type="importmap">
+    <!-- Ambient glow blob -->
+    <div class="glow-blob"></div>
+
+    <div class="about-content">
+      <!-- LEFT: Info -->
+      <div class="about-info">
+
+        <div class="about-text" data-reveal data-reveal-delay="0">
+          <p class="section-number">01 //</p>
+          <div class="section-label">Sobre el programa</div>
+          <h1>Ingeniería<br><span class="accent">Multimedia</span></h1>
+
+          <!-- Code snippet decoration -->
+          <div class="about-code-snippet">
+            <span class="kw">const</span> programa = {<br>
+            &nbsp;&nbsp;nombre: <span class="str">"Ingeniería Multimedia"</span>,<br>
+            &nbsp;&nbsp;mision: <span class="fn">await launchProject</span>(<span class="str">"innovation"</span>)<br>
+            }
+          </div>
+
+          <p>Formamos profesionales capaces de crear, desarrollar e innovar en el mundo de los medios
+            digitales, la realidad virtual y las tecnologías emergentes.</p>
+
+          <div class="about-buttons">
+            <a href="#" class="btn btn--primary">
+              Conoce más
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#" class="btn btn--ghost">Contáctenos</a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="about-stats" data-reveal data-reveal-delay="150">
+          <div class="stat-card">
+            <h3>15+</h3>
+            <p>Años de experiencia</p>
+          </div>
+          <div class="stat-card">
+            <h3>800+</h3>
+            <p>Graduados</p>
+          </div>
+          <div class="stat-card">
+            <h3>98%</h3>
+            <p>Empleabilidad</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Three.js 3D -->
+      <div class="about-image-container" id="aboutThree" data-reveal data-reveal-delay="200">
+        <div class="img-frame">
+          <img src="./assets/img/Img_1.png" class="about-image"
+            alt="Estudiante con dispositivos de realidad virtual">
+        </div>
+        <span class="hud-label">terrain_render.glsl</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================
+       SEMILLEROS E INVESTIGACION
+       ======================== -->
+  <section class="sectionInvestigacion">
+
+    <p class="section-number">02 //</p>
+    <div class="section-label" data-reveal>Semilleros e Investigación</div>
+    <h2 data-reveal data-reveal-delay="80">Grupos de<br>Investigación</h2>
+    <p data-reveal data-reveal-delay="160">
+      Nuestros semilleros son espacios donde estudiantes y docentes colaboran en proyectos
+      innovadores que impactan la industria multimedia y tecnológica.
+    </p>
+
+    <div class="semilleros">
+
+      <!-- Card 1 -->
+      <div class="semilleroCard" data-reveal data-reveal-delay="0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <h5>// Semillero 01</h5>
+        <h3>Videojuegos &amp; XR</h3>
+        <p>Creación de videojuegos y experiencias inmersivas con motores como Unity y Unreal Engine.
+           Investigación en mecánicas de juego, narrativa interactiva y realidad extendida.</p>
+        <div>
+          <div>
+            <h5>05</h5>
+            <span>miembros</span>
+          </div>
+          <div>
+            <h5>12</h5>
+            <span>proyectos</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn--secondary">Conoce más</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="semilleroCard" data-reveal data-reveal-delay="100">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"></path>
+        </svg>
+        <h5>// Semillero 02</h5>
+        <h3>Inteligencia Artificial</h3>
+        <p>Aplicación de machine learning y redes neuronales en producción audiovisual, generación
+           de contenido y análisis de datos para medios digitales.</p>
+        <div>
+          <div>
+            <h5>08</h5>
+            <span>miembros</span>
+          </div>
+          <div>
+            <h5>07</h5>
+            <span>proyectos</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn--secondary">Conoce más</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="semilleroCard" data-reveal data-reveal-delay="200">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        <h5>// Semillero 03</h5>
+        <h3>Diseño Interactivo</h3>
+        <p>Investigación en UX/UI avanzado, interfaces tangibles y diseño de experiencias digitales
+           centradas en el usuario para plataformas emergentes.</p>
+        <div>
+          <div>
+            <h5>06</h5>
+            <span>miembros</span>
+          </div>
+          <div>
+            <h5>09</h5>
+            <span>proyectos</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn--secondary">Conoce más</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================
+       EVENTOS
+       ======================== -->
+  <section class="Eventos" id="news">
+    <div id="particles-events" class="particles-bg"></div>
+
+    <p class="section-number">03 //</p>
+    <div class="section-label" data-reveal>// En vivo</div>
+    <h2 data-reveal data-reveal-delay="80">Próximos<br>Eventos</h2>
+
+    <div class="VideoEvento">
+      <!-- Video -->
+      <div class="video-wrapper" data-reveal data-reveal-delay="0">
+        <iframe src="https://www.youtube.com/embed/0gQwwXwgSUs"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Event info -->
+      <div class="event-info" data-reveal data-reveal-delay="150">
+        <h5>// Segunda Creación Colectiva</h5>
+        <h3>Segunda Creación Colectiva — Ingeniería Multimedia USBBOG</h3>
+        <p>
+          Ya puedes ver la segunda creación colectiva del USB Medialab. Los estudiantes de Ingeniería
+          Multimedia estuvieron trabajando en una animación donde los personajes más reconocidos de
+          Cartoon Network bailan y cantan al ritmo de Thrift Shop.
+        </p>
+        <a href="#" class="btn btn--primary">Eventos pasados</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       FOOTER
+       ======================== -->
+  <footer class="site-footer section">
+    <div class="max-w-contents footer-content">
+
+      <!-- Col 1: Identity -->
+      <div class="footer-col">
+        <img src="./assets/img/Logo.png" alt="Logo Ingeniería Multimedia" class="footer-logo">
+        <p class="muted" style="font-size:.82rem;">
+          Ingeniería Multimedia USBBOG. Formación, tecnología y creatividad para transformar el mundo digital.
+        </p>
+      </div>
+
+      <!-- Col 2: Links -->
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#home">Miembros</a></li>
+          <li><a href="#news">Eventos</a></li>
+          <li><a href="#">Servicios</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul class="footer-contact">
+  <li><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</li>
+  <li><i class="fa-solid fa-envelope"></i> ingenieria@usb.edu.co</li>
+  <li><i class="fa-solid fa-phone"></i> +57 1 234 5678</li>
+</ul>
+      </div>
+
+      <!-- Col 4: Social -->
+      <div class="footer-col">
+        <h4>Redes</h4>
+     <div class="footer-social">
+  <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+  <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+</div>
+      </div>
+
+    </div>
+
+    <hr class="hr">
+
+    <div class="max-w-contents footer-bottom">
+      <p>2025 Ingeniería Multimedia USBBOG — Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Three.js import map -->
+  <script type="importmap">
   {
     "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
     }
   }
-</script>
+  </script>
 
-    <script type="module" src="./js/about.js"></script>
-    <script type="module" src="./js/aboutThree.js"></script>
+  <script type="module" src="./js/about.js"></script>
+  <script type="module" src="./js/aboutThree.js"></script>
+
 </body>
-
 </html>
