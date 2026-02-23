@@ -565,7 +565,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-5);
-  max-width: 900px;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -573,7 +572,7 @@
 
 @media (min-width: 900px) {
   .Eventos .VideoEvento {
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr  1fr;
     gap: var(--sp-6);
     align-items: start;
   }
